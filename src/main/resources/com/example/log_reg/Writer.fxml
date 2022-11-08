@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.log_reg.WriterController">
+   <children>
+      <AnchorPane prefHeight="48.0" prefWidth="800.0" style="-fx-background-color: grey;">
+         <children>
+            <ImageView fx:id="menu" fitHeight="32.0" fitWidth="40.0" layoutX="10.0" layoutY="8.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../../image/burger_menu.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="exit" fitHeight="34.0" fitWidth="40.0" layoutX="748.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../image/cross.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane1" layoutY="6.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: black;" />
+      <AnchorPane fx:id="pane2" layoutY="48.0" prefHeight="452.0" prefWidth="172.0" style="-fx-background-color: skyblue;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="48.0">
+         <children>
+            <JFXButton alignment="BOTTOM_LEFT" layoutX="1.0" layoutY="8.0" prefHeight="39.0" prefWidth="120.0" text="Home">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="BOTTOM_LEFT" layoutY="58.0" prefHeight="32.0" prefWidth="142.0" text="Write Article">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="BOTTOM_LEFT" layoutX="1.0" layoutY="91.0" prefHeight="34.0" prefWidth="120.0" text="Logout">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="48.0" prefHeight="452.0" prefWidth="48.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="48.0">
+         <children>
+            <VBox prefHeight="139.0" prefWidth="43.0">
+               <children>
+                  <ImageView fx:id="home" fitHeight="44.0" fitWidth="51.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../../../image/HomePage.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="writing" fitHeight="44.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../image/writing.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="logout" fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../image/logout.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

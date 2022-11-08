@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DEB887;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.log_reg.registerController">
+   <children>
+      <Text fill="#140d0d" layoutX="20.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Registration">
+         <font>
+            <Font name="System Bold Italic" size="21.0" />
+         </font>
+      </Text>
+      <Label layoutX="281.0" layoutY="107.0" prefHeight="26.0" prefWidth="69.0" text="Name">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userRegName" layoutX="375.0" layoutY="107.0" promptText="Write Your Name" />
+      <Label layoutX="281.0" layoutY="158.0" text="Email">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userRegEmail" layoutX="375.0" layoutY="156.0" promptText="Your Email" />
+      <Label layoutX="280.0" layoutY="206.0" text="Password">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="userRegSignUp" layoutX="300.0" layoutY="290.0" mnemonicParsing="false" onAction="#userRegSignUpOnAction" prefHeight="31.0" prefWidth="251.0" text="Sign Up">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="userRegCancel" layoutX="300.0" layoutY="336.0" mnemonicParsing="false" onAction="#userRegCancelOnAction" prefHeight="31.0" prefWidth="252.0" text="Cancel">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="userRegPass" layoutX="375.0" layoutY="205.0" promptText="Give Password" />
+      <ImageView fx:id="showRegImageView" fitHeight="365.0" fitWidth="266.0" layoutY="35.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../../image/reg1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="showTopImageView" fitHeight="77.0" fitWidth="139.0" layoutX="382.0" layoutY="14.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../../image/reg.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
