@@ -20,9 +20,9 @@
    <children>
       <BorderPane prefHeight="600.0" prefWidth="800.0">
          <left>
-            <VBox prefHeight="600.0" prefWidth="195.0" style="-fx-background-color: #7B68EE;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="533.0" prefWidth="195.0" style="-fx-background-color: #7B68EE;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton prefHeight="65.0" prefWidth="195.0" text="Profile">
+                  <JFXButton fx:id="profile1" onAction="#clickAction" prefHeight="65.0" prefWidth="195.0" text="Profile">
                      <graphic>
                         <ImageView fx:id="profile" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -34,7 +34,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="195.0" text="Compose">
+                  <JFXButton fx:id="compose1" layoutX="10.0" layoutY="10.0" onAction="#clickAction" prefHeight="65.0" prefWidth="195.0" text="Compose">
                      <graphic>
                         <ImageView fx:id="compose" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -46,7 +46,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="76.0" prefHeight="65.0" prefWidth="195.0" text="Writers List">
+                  <JFXButton fx:id="writerlist1" layoutX="10.0" layoutY="76.0" onAction="#clickAction" prefHeight="65.0" prefWidth="195.0" text="Writers List">
                      <graphic>
                         <ImageView fx:id="writerList" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -58,7 +58,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="141.0" prefHeight="65.0" prefWidth="195.0" text="Logout">
+                  <JFXButton fx:id="logout1" layoutX="10.0" layoutY="141.0" onAction="#clickAction" prefHeight="65.0" prefWidth="195.0" text="Logout">
                      <graphic>
                         <ImageView fx:id="logout" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -77,7 +77,7 @@
             </VBox>
          </left>
          <top>
-            <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="800.0" style="-fx-background-color: #4B0082;" BorderPane.alignment="CENTER">
+            <HBox fx:id="hbox1" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="800.0" style="-fx-background-color: #4B0082;" BorderPane.alignment="CENTER">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -87,6 +87,11 @@
                         <Image url="@../../../../../../image/editor/designer.png" />
                      </image>
                   </ImageView>
+                  <Label fx:id="label1" prefHeight="35.0" prefWidth="305.0" text="Editor" textFill="WHITE">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
                </children>
                <effect>
                   <DropShadow />
