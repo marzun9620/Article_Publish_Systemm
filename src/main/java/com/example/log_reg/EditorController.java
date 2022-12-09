@@ -2,7 +2,6 @@
 
     import com.jfoenix.controls.JFXButton;
     import javafx.collections.FXCollections;
-    import javafx.collections.ObservableList;
     import javafx.event.ActionEvent;
     import javafx.fxml.FXML;
     import javafx.fxml.FXMLLoader;
@@ -14,15 +13,16 @@
     import javafx.scene.control.TableColumn;
     import javafx.scene.control.TableView;
     import javafx.scene.control.cell.PropertyValueFactory;
+    import javafx.scene.image.Image;
     import javafx.scene.image.ImageView;
     import com.example.log_reg.Controller;
-    import javafx.scene.layout.Background;
-    import javafx.scene.layout.BackgroundFill;
-    import javafx.scene.layout.CornerRadii;
-    import javafx.scene.layout.HBox;
+    import javafx.scene.input.MouseEvent;
+    import javafx.scene.layout.*;
     import javafx.scene.paint.Color;
     import javafx.stage.Stage;
 
+    import java.io.File;
+    import java.io.IOException;
     import java.net.URL;
     import java.util.ResourceBundle;
 
@@ -31,6 +31,8 @@
 
         @FXML
         private TableColumn<writers_info, String> action;
+        @FXML
+        private AnchorPane ap;
 
         @FXML
         private JFXButton addNew;
@@ -53,8 +55,7 @@
         @FXML
         private ImageView editor;
 
-        @FXML
-        private TableColumn<writers_info, String> email;
+
 
         @FXML
         private JFXButton exportMember;
@@ -68,48 +69,55 @@
         @FXML
         private ImageView logout;
 
-        @FXML
-        private TableColumn<writers_info, String> name;
 
         @FXML
         private ImageView profile;
         @FXML
         private HBox hbox1;
 
-        @FXML
-        private TableView<writers_info> table;
+
 
         @FXML
         private ImageView writerList;
-        public void setData(String username , String email , String action ) {
+       /* public void setData(String username , String email , String action ) {
            this.usernamme=username;
            this.emmail=email;
            this.acction=action;
         }
         ObservableList<writers_info> list = FXCollections.observableArrayList(
                 new writers_info(usernamme,emmail,acction)
-        );
+        );*/
         @Override
         public void initialize(URL location, ResourceBundle resources) {
-             name.setCellValueFactory(new PropertyValueFactory<writers_info , String>("name"));
-             action.setCellValueFactory(new PropertyValueFactory<writers_info , String>("action"));
-             email.setCellValueFactory(new PropertyValueFactory<writers_info , String>("email"));
-             table.setItems(list);
+            File showUserFile = new File("image/editor/profile.png");
+            Image showUserImage = new Image(showUserFile.toURI().toString());
+            profile.setImage(showUserImage);
+
+
+            File showInboxFile = new File("image/editor/new-email.png");
+            Image showInboxImage = new Image(showInboxFile.toURI().toString());
+            compose.setImage(showInboxImage);
+
+
+
+            File showWriter_listFile = new File("image/writer/icons8-users-96.png");
+            Image showWriterImage = new Image(showWriter_listFile.toURI().toString());
+            writerList.setImage(showWriterImage);
+
+
+
+            File showLogoutFile = new File("image/editor/logout.png");
+            Image showLogoutImage = new Image(showLogoutFile.toURI().toString());
+            logout.setImage(showLogoutImage);
+
+
         }
         @FXML
-        private void clickAction(ActionEvent event){
-            if(event.getSource()==profile1){
-                label1.setText("Editor Profile");
-                hbox1.setBackground(new Background(new BackgroundFill(Color.rgb(63,43,99), CornerRadii.EMPTY, Insets.EMPTY)));
-            }
-            else if(event.getSource()==compose1){
+        private void clickAction(ActionEvent event) throws IOException {
+
+             if(event.getSource()==compose1){
                 label1.setText("Compose");
                 hbox1.setBackground(new Background(new BackgroundFill(Color.rgb(99,43,63), CornerRadii.EMPTY, Insets.EMPTY)));
-
-            }
-            else if(event.getSource()==writerlist1){
-                label1.setText("Writer List");
-                hbox1.setBackground(new Background(new BackgroundFill(Color.rgb(43,99,63), CornerRadii.EMPTY, Insets.EMPTY)));
 
             }
             else if(event.getSource()==logout1){
@@ -128,5 +136,31 @@
                 }
 
             }
+
+
+
         }
+        @FXML
+        public void profile(MouseEvent event) throws IOException {
+            label1.setText("Editor Profile");
+            Node node;
+            node=(Node)FXMLLoader.load(getClass().getResource("editorprofile.fxml"));
+            ap.getChildren().setAll(node);
+        }
+        @FXML
+        void compose(MouseEvent event) throws IOException {
+            Node node;
+            node=(Node)FXMLLoader.load(getClass().getResource("editor_inbox.fxml"));
+            ap.getChildren().setAll(node);
+        }
+        @FXML
+        void writerlist(MouseEvent event) throws IOException {
+            label1.setText("Writer List");
+            hbox1.setBackground(new Background(new BackgroundFill(Color.rgb(43,99,63), CornerRadii.EMPTY, Insets.EMPTY)));
+            Node node;
+            node=(Node)FXMLLoader.load(getClass().getResource("writerlist.fxml"));
+            ap.getChildren().setAll(node);
+
+        }
+
     }

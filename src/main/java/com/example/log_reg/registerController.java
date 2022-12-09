@@ -1,5 +1,8 @@
 package com.example.log_reg;
 
+//import com.example.log_reg.listControler;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -17,9 +21,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.TableView;
+
+import static com.example.log_reg.listControler.Writers_info;
 
 
 public class registerController implements Initializable {
+
     int in;
     String Username,Password,usr,pass,emmail;
     @FXML
@@ -39,20 +47,26 @@ public class registerController implements Initializable {
 
     @FXML
     private Button userRegSignUp;
+
     @FXML
-    private ImageView showRegImageView;
-    @FXML
-    private ImageView showTopImageView;
+     ImageView showtopImageView;
+
 
     private Parent root;
-    @FXML
-    TableColumn<writers_info, String> name;
 
-    @FXML
-    TableView<writers_info> table;
-    @FXML
-    TableColumn<writers_info, String> action;
-    File f = new File("/home/marzun/Downloads/MIST/2-2/OOP-220/Projrct_Article_Publish_system/log_reg/FileInfo/");
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle rb) {
+
+
+        File showTopFile = new File("bg.jpg");
+        Image showTopImage = new Image(showTopFile.toURI().toString());
+        showtopImageView.setImage(showTopImage);
+
+    }
+
+    File f = new File("FileInfo");
 
     void createFolder(){
         if(!f.exists()){
@@ -62,11 +76,11 @@ public class registerController implements Initializable {
 
     void readFile() {
         try {
-            FileReader fr = new FileReader(f + "/logins.txt");
+            FileReader fr = new FileReader(f + "/logins_witer.txt");
             System.out.println("File Exits..");
         } catch (FileNotFoundException ex) {
             try {
-                FileWriter fw = new FileWriter(f + "/logins.txt");
+                FileWriter fw = new FileWriter(f + "/logins_witer.txt");
                 System.out.println("File created..");
             } catch (IOException ex1) {
                 Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex1);
@@ -77,7 +91,7 @@ public class registerController implements Initializable {
     void countLines(){
         try{
             in=1;
-            RandomAccessFile raf = new RandomAccessFile(f + "/logins.txt","rw");
+            RandomAccessFile raf = new RandomAccessFile(f + "/logins_witer.txt","rw");
             for(int i=0;raf.readLine()!=null;i++){
                 in++;
             }
@@ -91,7 +105,7 @@ public class registerController implements Initializable {
 
     void addData(String usr , String pass ,String email){
         try{
-            RandomAccessFile raf = new RandomAccessFile(f+"/logins.txt", "rw");
+            RandomAccessFile raf = new RandomAccessFile(f+"/logins_witer.txt", "rw");
             for(int i=0;i<in;i++){
                 raf.readLine();
             }
@@ -108,38 +122,37 @@ public class registerController implements Initializable {
         }
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        File showRegFile = new File("image/reg1.jpg");
-        Image showRegImage = new Image(showRegFile.toURI().toString());
-        showRegImageView.setImage(showRegImage);
 
-        File showTopFile = new File("image/reg.png");
-        Image showTopImage = new Image(showTopFile.toURI().toString());
-        showTopImageView.setImage(showTopImage);
-    }
+
+
+
+
     public void userRegCancelOnAction(ActionEvent event){
         Stage stage = (Stage) userRegCancel.getScene().getWindow();
         stage.close();
     }
 
     public void userRegSignUpOnAction(ActionEvent event) throws IOException{
-        //createFolder();
-        //readFile();
+        createFolder();
+        readFile();
         countLines();
         usr=userRegName.getText();
         pass=userRegPass.getText();
         emmail=userRegEmail.getText();
+        //writers_info w=new writers_info(usr,emmail,pass);
+           // table.getItems().add(w);
+         //ObservableList<writers_info> Writers_info= FXCollections.observableArrayList(
+              //  new writers_info(usr,emmail,pass)
+        // );
+        if(Writers_info==null) Writers_info=FXCollections.observableArrayList();
+            writers_info temp = new writers_info(usr,emmail,pass);
+            Writers_info.add(temp);
+
+
         addData(usr,pass,emmail);
 
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("Editor.fxml"));
-        root = loader.load();
-        EditorController editorController=loader.getController();
-        editorController.setData(usr,pass,emmail);
-
-
         try{
-            FXMLLoader fxmlRegLoader = new FXMLLoader(getClass().getResource("Editor.fxml"));
+            FXMLLoader fxmlRegLoader = new FXMLLoader(getClass().getResource("login.fxml"));
             Stage registrationStage = new Stage();
             registrationStage=(Stage)((Node)event.getSource()).getScene().getWindow();
             Scene Regscene = new Scene(fxmlRegLoader.load());

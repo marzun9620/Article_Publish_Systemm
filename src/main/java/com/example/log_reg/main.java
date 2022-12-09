@@ -11,22 +11,15 @@ import java.util.Objects;
 
 public class main extends Application {
 
-
-   /* public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("Editor.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.setScene(scene);
-        stage.show();
-    }*/
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Editor.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("article_page.fxml")));
         Scene sc = new Scene(root);
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(sc);
         primaryStage.show();
     }
+    
 
     public static void main(String[] args) {
         launch();
