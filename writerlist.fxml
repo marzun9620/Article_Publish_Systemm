@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="514.0" prefWidth="574.0" style="-fx-background-color: #810681;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.log_reg.listControler">
+   <children>
+      <Pane layoutX="11.0" layoutY="15.0" prefHeight="488.0" prefWidth="556.0" style="-fx-background-color: #E0FFFF;">
+         <children>
+            <Pane layoutX="5.0" prefHeight="480.0" prefWidth="148.0" style="-fx-background-color: #48D1CC;">
+               <children>
+                  <Text layoutX="46.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LIST">
+                     <font>
+                        <Font name="Kinnari Bold" size="21.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OF">
+                     <font>
+                        <Font name="Kinnari Bold" size="21.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="18.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WRITERS">
+                     <font>
+                        <Font name="Kinnari Bold" size="21.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <TableView fx:id="table" layoutX="153.0" layoutY="1.0" prefHeight="480.0" prefWidth="398.0">
+              <columns>
+                <TableColumn fx:id="userName" prefWidth="75.0" text="Name" />
+                  <TableColumn fx:id="userPass" prefWidth="75.0" text="Pass" />
+                  <TableColumn fx:id="email" prefWidth="75.0" text="Email" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

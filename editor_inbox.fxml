@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="591.0" prefWidth="696.0" style="-fx-background-color: #800080;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.log_reg.editor_inbox">
+    <children>
+        <Pane layoutX="17.0" layoutY="18.0" prefHeight="554.0" prefWidth="662.0" style="-fx-background-color: #D8BFD8;">
+            <children>
+                <ImageView fx:id="writerarticleimage" fitHeight="554.0" fitWidth="662.0" layoutX="1.0" opacity="0.77" pickOnBounds="true">
+                    <image>
+                        <Image url="@../../../../../../bg.jpg" />
+                    </image>
+                </ImageView>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="THISTLE" height="537.0" layoutX="9.0" layoutY="9.0" opacity="0.16" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="645.0" />
+                <Button fx:id="composesendbutton" layoutX="497.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#composeSendClicked" text="SEND" textFill="#78399e">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="composecancel" layoutX="560.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#composeCancelClicked" text="CANCEL" textFill="#78399e">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Label layoutX="215.0" layoutY="14.0" prefHeight="51.0" prefWidth="310.0" text="Your Inbox" textFill="#71138c">
+                    <font>
+                        <Font name="Century Gothic Bold" size="34.0" />
+                    </font>
+                </Label>
+            <ScrollPane layoutX="27.0" layoutY="74.0" opacity="0.75" prefHeight="428.0" prefWidth="606.0">
+               <content>
+                  <VBox prefHeight="334.0" prefWidth="623.0">
+                     <children>
+                        <TextField fx:id="textField1" opacity="0.75" prefHeight="147.0" prefWidth="623.0" />
+                        <Separator prefWidth="200.0" />
+                        <TextField fx:id="textField2" opacity="0.75" prefHeight="143.0" prefWidth="623.0" />
+                        <Separator prefHeight="11.0" prefWidth="623.0" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

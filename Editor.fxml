@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.log_reg.EditorController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="800.0">
+         <left>
+            <VBox prefHeight="533.0" prefWidth="195.0" spacing="20.0" style="-fx-background-color: #7B68EE;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="profile1" buttonType="RAISED" onMouseClicked="#profile" prefHeight="113.0" prefWidth="195.0" text="Profile" textFill="#ffeaea">
+                     <graphic>
+                        <ImageView fx:id="profile" fitHeight="56.0" fitWidth="49.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../../../../image/editor/profile.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Black" size="27.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </JFXButton>
+                  <Separator prefWidth="200.0" />
+                  <JFXButton fx:id="compose1" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#clickAction" onMouseClicked="#compose" prefHeight="65.0" prefWidth="195.0" text="Inbox" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="compose" fitHeight="39.0" fitWidth="41.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../../../../image/editor/new-email.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Black" size="23.0" />
+                     </font>
+                  </JFXButton>
+                  <Separator prefWidth="200.0" />
+                  <JFXButton fx:id="writerlist1" buttonType="RAISED" layoutX="10.0" layoutY="76.0" onMouseClicked="#writerlist" prefHeight="91.0" prefWidth="195.0" text="Writers List" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="writerList" fitHeight="38.0" fitWidth="33.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../../../../image/editor/blogger.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <Separator prefWidth="200.0" />
+                  <JFXButton fx:id="logout1" buttonType="RAISED" layoutX="10.0" layoutY="141.0" onAction="#clickAction" prefHeight="100.0" prefWidth="195.0" text="Logout" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="logout" fitHeight="48.0" fitWidth="41.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../../../../image/editor/logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Black" size="26.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </VBox>
+         </left>
+         <top>
+            <HBox fx:id="hbox1" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="800.0" style="-fx-background-color: #4B0082;" BorderPane.alignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <ImageView fx:id="editor" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../image/editor/designer.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="label1" prefHeight="35.0" prefWidth="305.0" text="Editor" textFill="WHITE">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+         </top>
+         <center>
+            <AnchorPane fx:id="ap" prefHeight="513.0" prefWidth="574.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

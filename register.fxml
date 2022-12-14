@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="453.0" prefWidth="684.0" style="-fx-background-color: #810681;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.log_reg.registerController">
+   <children>
+      <ImageView fx:id="showtopImageView" fitHeight="437.0" fitWidth="641.0" layoutX="21.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../bg.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="298.0" layoutY="107.0" prefHeight="30.0" prefWidth="110.0" text="Name" textFill="#45316b">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userRegEmail" layoutX="435.0" layoutY="154.0" opacity="0.86" prefHeight="30.0" prefWidth="209.0" promptText="Your Email" />
+      <Button fx:id="userRegSignUp" layoutX="474.0" layoutY="267.0" mnemonicParsing="false" onAction="#userRegSignUpOnAction" prefHeight="30.0" prefWidth="125.0" text="Sign Up" textFill="#45316b">
+         <font>
+            <Font name="Bell MT Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="userRegCancel" layoutX="474.0" layoutY="312.0" mnemonicParsing="false" onAction="#userRegCancelOnAction" prefHeight="29.0" prefWidth="125.0" text="Cancel" textFill="#45316b">
+         <font>
+            <Font name="Bell MT Bold" size="15.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="userRegPass" layoutX="435.0" layoutY="203.0" opacity="0.86" prefHeight="30.0" prefWidth="209.0" promptText="Give Password" />
+      <TextField fx:id="userRegName" layoutX="435.0" layoutY="107.0" opacity="0.86" prefHeight="30.0" prefWidth="209.0" promptText="Write Your Name" />
+      <Text fill="INDIGO" fontSmoothingType="LCD" layoutX="39.0" layoutY="174.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" textAlignment="CENTER" wrappingWidth="209.3751996757503">
+         <font>
+            <Font name="Century Gothic Bold" size="41.0" />
+         </font>
+      </Text>
+      <Text fill="INDIGO" fontSmoothingType="LCD" layoutX="39.0" layoutY="282.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="for free!" textAlignment="CENTER" wrappingWidth="209.3751996757503">
+         <font>
+            <Font name="Century Gothic Bold" size="25.0" />
+         </font>
+      </Text>
+      <Pane layoutX="20.0" layoutY="17.0" opacity="0.31" prefHeight="418.0" prefWidth="247.0" style="-fx-background-color: #800080;" />
+      <Text fill="INDIGO" fontSmoothingType="LCD" layoutX="39.0" layoutY="221.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="TODAY" textAlignment="CENTER" wrappingWidth="209.3751996757503">
+         <font>
+            <Font name="Century Gothic Bold" size="41.0" />
+         </font>
+      </Text>
+      <Line endX="101.4000244140625" layoutX="161.0" layoutY="249.0" startX="-135.40000915527344" stroke="INDIGO" strokeWidth="2.0" />
+      <Label layoutX="298.0" layoutY="154.0" prefHeight="30.0" prefWidth="110.0" text="Email" textFill="#45316b">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="298.0" layoutY="196.0" prefHeight="30.0" prefWidth="110.0" text="Password" textFill="#45316b">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
