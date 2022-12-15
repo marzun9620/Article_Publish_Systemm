@@ -23,12 +23,12 @@
                     </image>
                 </ImageView>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="THISTLE" height="483.0" layoutX="27.0" layoutY="19.0" opacity="0.16" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="557.0" />
-                <Button fx:id="composesendbutton" layoutX="387.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#composeSendClicked" text="SEND" textFill="#78399e">
+                <Button fx:id="composesendbutton" layoutX="387.0" layoutY="467.0" mnemonicParsing="false" onAction="#composeSendClicked" text="SEND" textFill="#78399e">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Button>
-                <Button fx:id="composecancel" layoutX="456.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#composeCancelClicked" text="CANCEL" textFill="#78399e">
+                <Button fx:id="composecancel" layoutX="456.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#composeCancelClicked" text="Import" textFill="#78399e">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>

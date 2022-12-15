@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.TableView;
@@ -76,16 +77,37 @@ public class registerController implements Initializable {
 
     void readFile() {
         try {
-            FileReader fr = new FileReader(f + "/logins_witer.txt");
-            System.out.println("File Exits..");
-        } catch (FileNotFoundException ex) {
-            try {
-                FileWriter fw = new FileWriter(f + "/logins_witer.txt");
-                System.out.println("File created..");
-            } catch (IOException ex1) {
-                Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex1);
+            //FileReader fr = new FileReader(f + "/logins_witer.txt");
+            File file = new File("FileInfo/logins_witer.txt");
+            file.createNewFile();
+            Scanner sc = new Scanner(file);
+            String username, password, email;
 
+            while(sc.hasNext())
+            {
+                sc.next();
+                username=sc.next();
+                sc.next();
+                password=sc.next();
+                sc.next();
+                email=sc.next();
+
+
+                Writers_info.add(new writers_info(username,email,password));
             }
+
+            sc.close();
+
+            System.out.println("File Exits..");
+        } catch (IOException ex) {
+//            try {
+//                FileWriter fw = new FileWriter(f + "/logins_witer.txt");
+//                System.out.println("File created..");
+//            } catch (IOException ex1) {
+//                Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex1);
+//
+//            }
+            ex.printStackTrace();
         }
     }
     void countLines(){
@@ -133,6 +155,7 @@ public class registerController implements Initializable {
     }
 
     public void userRegSignUpOnAction(ActionEvent event) throws IOException{
+        if(Writers_info==null) Writers_info=FXCollections.observableArrayList();
         createFolder();
         readFile();
         countLines();
@@ -144,7 +167,7 @@ public class registerController implements Initializable {
          //ObservableList<writers_info> Writers_info= FXCollections.observableArrayList(
               //  new writers_info(usr,emmail,pass)
         // );
-        if(Writers_info==null) Writers_info=FXCollections.observableArrayList();
+
             writers_info temp = new writers_info(usr,emmail,pass);
             Writers_info.add(temp);
 
@@ -152,7 +175,7 @@ public class registerController implements Initializable {
         addData(usr,pass,emmail);
 
         try{
-            FXMLLoader fxmlRegLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+            FXMLLoader fxmlRegLoader = new FXMLLoader(getClass().getResource("Writer.fxml"));
             Stage registrationStage = new Stage();
             registrationStage=(Stage)((Node)event.getSource()).getScene().getWindow();
             Scene Regscene = new Scene(fxmlRegLoader.load());

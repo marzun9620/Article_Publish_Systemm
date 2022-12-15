@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,7 +23,7 @@
                         <Font name="Mallanna" size="40.0" />
                     </font>
                 </Label>
-                <ScrollPane layoutX="15.0" layoutY="98.0" prefHeight="282.0" prefWidth="557.0" />
+            <Label fx:id="textField3" layoutX="125.0" layoutY="122.0" prefHeight="153.0" prefWidth="339.0" style="-fx-background-color: white;" />
             </children>
         </Pane>
     </children>

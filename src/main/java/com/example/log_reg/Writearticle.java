@@ -6,13 +6,18 @@ package com.example.log_reg;
 
         import com.jfoenix.controls.JFXTextArea;
         import javafx.fxml.FXML;
+        import javafx.fxml.FXMLLoader;
         import javafx.fxml.Initializable;
+        import javafx.scene.Node;
+        import javafx.scene.Scene;
         import javafx.scene.control.Button;
         import javafx.scene.control.TextArea;
         import javafx.scene.image.Image;
         import javafx.scene.image.ImageView;
         import javafx.scene.input.MouseEvent;
+        import javafx.stage.Stage;
 
+        import javax.swing.*;
         import java.io.*;
         import java.net.URL;
         import java.util.ResourceBundle;
@@ -64,7 +69,7 @@ public class Writearticle implements Initializable {
                 raf.readLine();
             }
             raf.writeBytes("\r\n");
-            raf.writeBytes("Writings: "+writings+"\r\n");
+            raf.writeBytes(writings+"\r\n");
             //raf.writeBytes("Email: "+mail);
         }catch(FileNotFoundException ex){
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
@@ -93,7 +98,20 @@ public class Writearticle implements Initializable {
 
     @FXML
     void composeCancelClicked(MouseEvent event) {
+        JOptionPane.showMessageDialog(null,"Cenceled");
+        try{
+            FXMLLoader fxmlRegLoader = new FXMLLoader(getClass().getResource("Writer.fxml"));
+            Stage registrationStage = new Stage();
+            registrationStage=(Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene Regscene = new Scene(fxmlRegLoader.load());
+            // registrationStage.initStyle(StageStyle.UNDECORATED);
+            registrationStage.setScene(Regscene);
+            registrationStage.show();
 
+        }catch(Exception ex){
+            ex.printStackTrace();
+            ex.getCause();
+        }
     }
 
     @FXML
@@ -104,6 +122,7 @@ public class Writearticle implements Initializable {
          readFile();
          countLines();
          addData(writings);
+        JOptionPane.showMessageDialog(null,"Done");
 
     }
 
